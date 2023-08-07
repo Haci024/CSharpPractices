@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+
+namespace CodeforexamSmooth
+{
+    public class AppDomain
+    {
+        public static void Main(string[] args)
+        {
+            double width;//en
+            double length;//uzunluq
+            double heigth;//hundurluk
+            double cost;//Qiymeti
+            Console.Write("Otagin enini daxil edin:");
+            width = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Otagin uzunlugunu daxil edin:");
+            length = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Otagin hundurluyu daxil edin:");
+            heigth = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Tavan və yerin sahəsi:");
+            Console.WriteLine(2*length*width);
+            Console.Write("Ön  divarların sahəsi:");
+            Console.WriteLine(2*length*heigth);
+            Console.Write("Yan divarların sahəsi:");
+            Console.WriteLine(2*width*heigth);
+            Console.Write("Qiymeti  daxil edin:");
+            cost = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Otaqin qiymeti:");
+            Console.WriteLine(2*cost*(length * heigth + width * heigth+ length * width));
+        }
+    }
+}
+
+
+
+
+
+

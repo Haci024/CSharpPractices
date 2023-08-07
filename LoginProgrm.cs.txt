@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+
+namespace CodeforexamSmooth
+{
+    class  Students
+    {
+
+        static void Main(string[] args)
+        {
+
+            string Username = "Odissey";
+            string Password = "Orxan1920";
+            Console.Write("Please enter Username:");
+            Username = Convert.ToString(Console.ReadLine());
+            Console.Write("Please enter Password:");
+            Password = Convert.ToString(Console.ReadLine());
+
+            if (Username == "Odissey" &&  Password=="Orxan1920")
+            {
+                Console.WriteLine("Welcome to Website!");
+            }
+            else if (Username != "Odissey" && Password == "Orxan1920")
+            {
+                Console.WriteLine("Your Username is wrong!");
+            }
+            else if(Username == "Odissey" && Password == "Orxan1920")
+            {
+                Console.WriteLine("Your Password is wrong!");
+            }
+            else
+            {
+                Console.WriteLine("Something is wrong!");
+            }
+
+
+
+
+        }
+      
+        
+    }
+
+}

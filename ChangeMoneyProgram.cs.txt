@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+
+namespace CodeforexamSmooth
+{
+
+    public class Money
+    {
+      
+
+        public static void Main(string[] args)
+        {
+            while (true) { 
+                double value;
+                double AZN;
+                double EUR;
+                double USD;
+                Console.WriteLine("1-AZNtoUSD");
+                Console.WriteLine("2-USDtoAZN");
+                Console.WriteLine("3-EURtoUSD");
+                Console.WriteLine("4-USDtoEUR");
+                Console.WriteLine("5-EURtoAZN");
+                Console.WriteLine("6-AZNtoEUR");
+                Console.WriteLine("Istədiyiniz əməliyyatın qiymetini daxil edin:");
+                value = Convert.ToDouble(Console.ReadLine());
+
+
+                switch (value)
+                {
+                    case 1:
+                        Console.WriteLine("AZN daxil edin:");
+                        AZN = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("USD:");
+                        Console.WriteLine(AZN / 1.7);
+                        break;
+                    case 2:
+                        Console.WriteLine("USD daxil edin:");
+                        USD = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("AZN:");
+                        Console.WriteLine(USD * 1.7);
+                        break;
+                    case 3:
+                        Console.WriteLine("EURO daxil edin:");
+                        EUR = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("USD:");
+                        Console.WriteLine(EUR / 0.976848686);
+                        break;
+                    case 4:
+                        Console.WriteLine("USD daxil edin:");
+                        USD = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("EUR:");
+                        Console.WriteLine(USD * 0.976848686);
+                        break;
+                    case 5:
+                        Console.WriteLine("EURO daxil edin:");
+                        EUR = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("AZN:");
+                        Console.WriteLine(EUR * 2);
+                        break;
+                    case 6:
+                        Console.WriteLine("AZN daxil edin:");
+                        AZN = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("EUR:");
+                        Console.WriteLine(AZN / 2);
+                        break;
+                    default:
+                        Console.WriteLine("Bele emeliyyat yoxdur");
+                        break;
+
+                }
+                Console.ReadKey();
+            }
+            #region Money
+         
+
+
+            #endregion.V1
+
+        }
+    }
+}
+
+
+

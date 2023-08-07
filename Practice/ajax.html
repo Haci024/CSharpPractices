@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Para Dönüştürücü</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Para Dönüştürücü</h1>
+  <input type="number" id="inputAmount" placeholder="Miktarı girin">
+  <select id="inputCurrency">
+    <option value="usd">USD</option>
+    <option value="eur">EUR</option>
+    <option value="gbp">GBP</option>
+  </select>
+  <select id="outputCurrency">
+    <option value="usd">USD</option>
+    <option value="eur">EUR</option>
+    <option value="gbp">GBP</option>
+  </select>
+  <button id="convertButton">Dönüştür</button>
+  <h2 id="result"></h2>
+
+  <script>
+    $(document).ready(function() {
+      // Dönüştürme işlemi
+      $("#convertButton").on("click", function() {
+        var inputAmount = $("#inputAmount").val();
+        var inputCurrency = $("#inputCurrency").val();
+        var outputCurrency = $("#outputCurrency").val();
+
+        // API kullanarak döviz kuru al
+        $.ajax({
+          url: "https://api.exchangerate-api.com/v4/latest/" + inputCurrency,
+          dataType: "json",
+          success: function(data) {
+            var exchangeRate = data.rates[outputCurrency];
+            var convertedAmount = inputAmount * exchangeRate;
+            $("#result").text(convertedAmount + " " + outputCurrency);
+          },
+          error: function() {
+            $("#result").text("Dönüştürme başarısız oldu.");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
